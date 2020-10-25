@@ -61,9 +61,12 @@ function init () {
   dirLight.position.set(0, 0, 1);
   scene.add(dirLight);
 
-  renderer = new THREE.WebGLRenderer();
+  renderer = new THREE.WebGLRenderer({
+    alpha: true,
+    antialias: true
+  });
   renderer.setSize(width, height);
-  renderer.setClearColor(0xb9d3ff, 1);
+  // renderer.setClearColor(0xb9d3ff, 1);
   root.appendChild(renderer.domElement);
 
   labelRenderer = new CSS2DRenderer();
